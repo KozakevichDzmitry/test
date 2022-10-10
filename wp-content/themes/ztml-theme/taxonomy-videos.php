@@ -1,11 +1,3 @@
-<?php
-
-/*
- * Template Name: Все новости
-*/
-
-?>
-
 <?php require_once(COMPONENTS_PATH . 'sidebar.php'); ?>
 <?php require_once(COMPONENTS_PATH . 'pdf-attachments.php'); ?>
 <?php require_once(COMPONENTS_PATH . 'topic-bar.php'); ?>

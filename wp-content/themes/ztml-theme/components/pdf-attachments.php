@@ -1,9 +1,9 @@
 <?php
 
-function render_pdf_attachments($posts, $class = '', $slug = '')
+function render_pdf_attachments($posts, $class = '')
 {
 ?>
-	<div class="pdf-attachments <?php echo $class; ?> <?php echo $slug; ?>">
+	<div class="pdf-attachments <?php echo $class; ?>">
 		<?php foreach ($posts as $post) : ?>
 			<?php render_pdf_attachments_item($post->ID); ?>
 		<?php endforeach; ?>

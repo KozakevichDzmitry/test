@@ -132,7 +132,6 @@ function render_new_template_video($post_ID, $is_future = false)
 {
 	$url = get_the_post_thumbnail_url($post_ID);
 ?>
-<div class="box">
 	<div class="news-template-line vertical video">
 		<?php $eternal_video = carbon_get_post_meta($post_ID, 'video_post_type_eternal_video')[0]; ?>
 		<?php $youtube_video = carbon_get_post_meta($post_ID, 'video_post_type_youtube-link'); ?>
@@ -215,6 +214,5 @@ function render_new_template_video($post_ID, $is_future = false)
 			</div>
 		</div>
 	</div>
-</div>
 <?php
 }

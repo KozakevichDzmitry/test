@@ -36,8 +36,6 @@ function news_taxonomy()
 		'show_ui' => true,
 		'show_admin_column' => true,
 		'query_var' => true,
-		'rewrite' => true,
-		'show_in_rest' => true,
 	));
 
 	register_taxonomy(
@@ -54,7 +52,6 @@ function news_taxonomy()
 			'show_in_rest' => true,
 			'show_admin_column' => true,
 			'query_var' => true,
-			'rewrite' => true
 		)
 	);
 }

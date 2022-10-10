@@ -25,9 +25,9 @@ $satms = new WP_Query(
 );
 ?>
 
-<div class="adfox-banner-background">
-	<?php render_adv('page', get_the_ID(), 'background'); ?>
-</div>
+    <div class="adfox-banner-background">
+        <?php render_adv('page', get_the_ID(), 'background'); ?>
+    </div>
 <main class="satms">
 	<div class="container container_adv"><?php render_adv('page', get_the_ID(), 'before_main'); ?></div>
 	<div class="container main-container">
@@ -50,5 +50,5 @@ $satms = new WP_Query(
 		<?php render_sidebar(); ?>
 	</div>
 </main>
-
 <?php get_footer(); ?>
+

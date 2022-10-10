@@ -6,15 +6,15 @@ function render_newspapers_template($type_adv = "page", $id = false)
 	$newspapers = array(
 		array(
 			'name' => 'Вечерний Минск',
-			'slug' => 'vechernij-minsk'
+			'slug' => 'mk'
 		),
 		array(
 			'name' => 'Минский Курьер',
-			'slug' => 'minskij-kurer'
+			'slug' => 'vminsk'
 		),
 		array(
 			'name' => 'Качели',
-			'slug' => 'kacheli'
+			'slug' => 'zhurnal-kacheli'
 		)
 	);
 	foreach ($newspapers as $cat) {
@@ -43,6 +43,6 @@ function render_newspapers_template($type_adv = "page", $id = false)
 					)
 				)
 			)
-		), 'three', $cat["slug"]);
+		), 'three');
 	}
 }

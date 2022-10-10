@@ -10,7 +10,7 @@
 <?php require_once(COMPONENTS_PATH . 'news-templates/newspapers-template.php'); ?>
 <?php require_once(COMPONENTS_PATH . 'news-templates/see-video-template.php'); ?>
 <?php require_once(COMPONENTS_PATH . 'news-templates/video-news-template.php'); ?>
-
+<?php require_once(COMPONENTS_PATH . 'adv.php'); ?>
 <?php
 $last_videos_quary = new WP_Query([
 	'post_type' => 'video',
@@ -22,8 +22,11 @@ $last_videos_posts = $last_videos_quary->posts;
 ?>
 
 <?php get_header(); ?>
-
+    <div class="adfox-banner-background">
+        <?php render_adv('page', get_the_ID(), 'background'); ?>
+    </div>
 <main class="all-videos">
+    <div class="container container_adv"><?php render_adv('page', get_the_ID(), 'before_main'); ?></div>
 	<div class="container main-container">
 		<div class="content-wrapper">
 			<div class="main-content">
@@ -45,7 +48,7 @@ $last_videos_posts = $last_videos_quary->posts;
 			</div>
 			<div class="second-content">
 				<?php render_video_news_template(); ?>
-				<?php render_newspapers_template(); ?>
+				<?php render_newspapers_template('page', get_the_ID()); ?>
 			</div>
 		</div>
 		<?php render_sidebar(); ?>

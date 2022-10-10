@@ -9,7 +9,7 @@ function render_timeline()
 		<div class="container">
 			<div class="minimize-bar">
 				<span>Лента новостей</span>
-				<span id="added_news_counter"></span>
+				<span>44</span>
 			</div>
 		</div>
 		<div class="container news collapsed">

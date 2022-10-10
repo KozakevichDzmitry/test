@@ -86,9 +86,9 @@ $daysFull = array('Понедельник', 'Вторник', 'Среда', 'Ч�
 				</div>
 			</div>
 			<div class="second-content">
-				<?php render_most_read_news_template(true, 'page', $id); ?>
-				<?php render_top_three_news_template('page', $id); ?>
-				<?php render_newspapers_template('page', $id); ?>
+				<?php render_most_read_news_template(true, 'page', get_the_ID()); ?>
+				<?php render_top_three_news_template('page', get_the_ID()); ?>
+				<?php render_newspapers_template('page', get_the_ID()); ?>
 			</div>
 		</div>
 		<?php render_sidebar(); ?>

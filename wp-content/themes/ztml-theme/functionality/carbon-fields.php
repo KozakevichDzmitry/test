@@ -160,14 +160,14 @@ function crb_attach_theme_options()
 				->set_attribute('min', '1'),
 		));
 
-	addcontainer_adv_for_post('satm', array('background', 'main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-	addcontainer_adv_for_post('cae', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-	addcontainer_adv_for_post('aaq', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-	addcontainer_adv_for_post('meri', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-	addcontainer_adv_for_post('authors-column', array('background', 'main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-	addcontainer_adv_for_post('video', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	addcontainer_adv_for_post('satm', array('background', 'main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
+	addcontainer_adv_for_post('cae', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
+	addcontainer_adv_for_post('aaq', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
+	addcontainer_adv_for_post('meri', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
+	addcontainer_adv_for_post('authors-column', array('background', 'main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
+	addcontainer_adv_for_post('video', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 	addcontainer_adv_for_post('news', array('background', 'main', 'most_read_news',));
-	addcontainer_adv_for_post('see', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	addcontainer_adv_for_post('see', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 
 
 	$adv_options_container = Container::make('theme_options', __('Реклама'))
@@ -181,9 +181,9 @@ function crb_attach_theme_options()
 	add_tab_adv($adv_page_container, get_pages([
 		'post_type' => 'page',
 		'post_status' => 'publish',
-		'exclude' => '1063345',
+		'exclude' => '8',
 		'posts_per_page' => -1
-	]), 'post_type', array('main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	]), 'post_type', array('main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
 	wp_reset_postdata();
 
 	$adv_newspapers_container = Container::make('theme_options', __('Издательства'))
@@ -192,7 +192,7 @@ function crb_attach_theme_options()
 		'taxonomy' => 'newspapers',
 		'type' => 'newspaper',
 		'posts_per_page' => -1
-	]), 'taxonomy', array('main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	]), 'taxonomy', array('main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
 	wp_reset_postdata();
 
 	$adv_district_container = Container::make('theme_options', __('Районы'))
@@ -201,45 +201,34 @@ function crb_attach_theme_options()
 		'post_type' => 'district',
 		'post_status' => 'publish',
 		'posts_per_page' => -1
-	]), 'post_type', array('main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer', 'society_news', 'urban_economy_news', 'economy_news'));
-	wp_reset_postdata();
-
-	$adv_say_container = Container::make('theme_options', __('Говорит Минск'))
-		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_say_container, 'satm', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-	add_tab_adv($adv_say_container, get_categories([
-		'taxonomy' => 'satms',
-		'type' => 'satm',
-		'posts_per_page' => -1
-	]), 'taxonomy', array('main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	]), 'post_type', array('main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk', 'society_news', 'urban_economy_news', 'economy_news'));
 	wp_reset_postdata();
 
 	$adv_cae_container = Container::make('theme_options', __('Причина и следствие'))
 		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_cae_container, 'cae', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	add_tab_generic_adv($adv_cae_container, 'cae', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 
-	$adv_aaq_container = Container::make('theme_options', __('Задайте вопрос'))
-		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_aaq_container, 'aaq', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
-
+//	$adv_aaq_container = Container::make('theme_options', __('Обращения'))
+//		->set_page_parent($adv_options_container);
+//	add_tab_generic_adv($adv_aaq_container, 'aaq', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 
 	$adv_meri_container = Container::make('theme_options', __('Примите меры'))
 		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_meri_container, 'meri', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	add_tab_generic_adv($adv_meri_container, 'meri', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 
 
 	$adv_authors_column_container = Container::make('theme_options', __('Авторская колонка'))
 		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_authors_column_container, 'authors-column', array('background', 'main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	add_tab_generic_adv($adv_authors_column_container, 'authors-column', array('background', 'main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
 
 	$adv_video_container = Container::make('theme_options', __('Видео'))
 		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_video_container, 'video', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	add_tab_generic_adv($adv_video_container, 'video', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 	add_tab_adv($adv_video_container, get_categories([
 		'taxonomy' => 'videos',
 		'type' => 'video',
 		'posts_per_page' => -1
-	]), 'taxonomy', array('background', 'main', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	]), 'taxonomy', array('background', 'main', 'vminsk', 'zhurnal-kacheli', 'mk'));
 	wp_reset_postdata();
 
 	$adv_news_container = Container::make('theme_options', __('Новости'))
@@ -249,12 +238,13 @@ function crb_attach_theme_options()
 		'taxonomy' => 'news-list',
 		'type' => 'news',
 		'posts_per_page' => -1
-	]), 'taxonomy', array('background', 'main', 'most_read_news', 'top_three_news', 'vechernij-minsk', 'kacheli', 'minskij-kurer'));
+	]), 'taxonomy', array('background', 'main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
+    add_tab_adv($adv_news_container, get_categories([
+        'taxonomy' => 'news-district',
+        'type' => 'news',
+        'posts_per_page' => -1
+    ]), 'taxonomy', array('background', 'main', 'most_read_news', 'top_three_news', 'vminsk', 'zhurnal-kacheli', 'mk'));
 	wp_reset_postdata();
-
-	$adv_see_container = Container::make('theme_options', __('Смотрите'))
-		->set_page_parent($adv_options_container);
-	add_tab_generic_adv($adv_see_container, 'see', array('background', 'main',));
 
 
 	Container::make('post_meta', __('Руководители', 'crb'))

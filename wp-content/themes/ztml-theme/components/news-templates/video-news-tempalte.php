@@ -28,7 +28,9 @@ function render_video_news_template($title, $tax_query = array())
 
 	<div class="video-news-template">
 		<?php foreach ($top_three_posts as $pst) : ?>
-			<?php render_new_template_video($pst->ID); ?>
+			<div class="box">
+				<?php render_new_template_video($pst->ID); ?>
+			</div>
 		<?php endforeach; ?>
 	</div>
 <?php

@@ -91,9 +91,9 @@ $last_post_id = get_posts(array(
 				<?php endif ?>
 			</div>
 			<div class="second-content">
-				<?php render_most_read_news_template(true, 'page', $id); ?>
-				<?php render_top_three_news_template('page', $id); ?>
-				<?php render_newspapers_template('page', $id); ?>
+				<?php render_most_read_news_template(true, 'page', $post->ID); ?>
+				<?php render_top_three_news_template('page', $post->ID); ?>
+				<?php render_newspapers_template('page', $post->ID); ?>
 			</div>
 		</div>
 		<?php render_sidebar(); ?>

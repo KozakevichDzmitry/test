@@ -16,7 +16,7 @@
 <?php get_header(); ?>
 
 <div class="adfox-banner-background">
-	<?php render_adv('post', get_the_ID(), 'background'); ?>
+	<?php render_adv('page', get_the_ID(), 'background'); ?>
 </div>
 <main class="subscribe">
 	<div class="container container_adv"><?php render_adv('page', get_the_ID(), 'before_main'); ?></div>
@@ -36,9 +36,9 @@
 				</div>
 			</div>
 			<div class="second-content">
-				<?php render_most_read_news_template(true, 'page', $id); ?>
-				<?php render_top_three_news_template('page', $id); ?>
-				<?php render_newspapers_template('page', $id); ?>
+				<?php render_most_read_news_template(true, 'page', get_the_ID()); ?>
+				<?php render_top_three_news_template('page', get_the_ID()); ?>
+				<?php render_newspapers_template('page', get_the_ID()); ?>
 			</div>
 		</div>
 		<?php render_sidebar(); ?>

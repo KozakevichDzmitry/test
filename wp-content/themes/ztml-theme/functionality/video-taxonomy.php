@@ -23,7 +23,6 @@ function vide_taxonomy()
 			'publicly_queryable'  => true,
 			'capability_type'     => 'post',
 			'show_in_rest' => true,
-			'rewrite' => true
 		)
 	);
 
@@ -42,8 +41,7 @@ function vide_taxonomy()
 			'show_in_rest' => true,
 			'show_admin_column' => true,
 			'query_var' => true,
-			'rewrite' => true
-		),
+		)
 	);
 }
 
