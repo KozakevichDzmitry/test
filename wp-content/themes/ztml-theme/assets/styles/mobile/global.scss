@@ -1,0 +1,144 @@
+@media (max-width: 768px) {
+	.container {
+		&.main-container {
+			padding: 0;
+			overflow: initial;
+			.content-wrapper {
+				width: 100%;
+			}
+		}
+	}
+
+	header {
+		top: 0;
+	}
+
+	main {
+		margin-top: 145px;
+		margin-bottom: 0;
+		padding-bottom: 30px;
+	}
+
+	#secondary {
+		position: fixed !important;
+		right: -320px;
+		max-width: 320px;
+		margin-top: 0px;
+		transition: 0.2s;
+		top: 0;
+		z-index: 20;
+		&.active {
+			right: 0;
+
+			// animation: secondary-active .1s linear;
+		}
+
+		.inner-wrapper-sticky {
+			background: $white-color;
+			padding: 29px 20px 0 10px;
+			overflow: hidden;
+			overflow-y: auto;
+			height: 100vh;
+			padding-bottom: 40px;
+			left: initial !important;
+			top: initial !important;
+			position: initial !important;
+			transform: initial !important;
+		}
+
+		.box {
+			padding: 5px !important;
+
+			.news-template-line {
+				padding: 5px 5px 17px;
+				gap: 6px;
+			}
+		}
+
+		.widget {
+			.widget-title {
+				margin-bottom: 13px;
+			}
+
+			.news-template-line {
+				img {
+					height: 177px !important;
+				}
+
+				.post-container {
+					.post-info-container {
+						margin-bottom: 0;
+					}
+
+					.post-title {
+						min-height: 60px;
+					}
+				}
+			}
+
+			& .news-template-line:not(:last-child):after {
+				content: initial;
+			}
+		}
+	}
+
+	#main-content {
+		width: 100%;
+		// padding-bottom: 30px;
+		// display: flex;
+		// flex-wrap: wrap;
+		> div:not(.topic-bar) {
+			// max-width: 500px;
+			// margin: 0 auto;
+			// width: calc(50% - 87px);
+			// flex-direction: row;
+			// flex-wrap: wrap;
+		}
+	}
+
+	.secondary-mobile {
+		position: fixed;
+		top: 246px;
+		right: 0;
+		z-index: 20;
+		.secondary-mobile-btn {
+			background-color: #214972;
+			width: 16px;
+			height: 60px;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: 0.2s;
+			svg {
+				width: 10px;
+				// height: 12px;
+			}
+			&.active {
+				transform: translateX(-320px);
+				svg {
+					transform: rotateZ(180deg);
+				}
+			}
+		}
+	}
+
+	.page-description {
+	}
+
+	.main-content {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding-bottom: 0px;
+	}
+	.load-moree-btn {
+		button {
+			padding: 12px 25px 10px;
+		}
+	}
+}

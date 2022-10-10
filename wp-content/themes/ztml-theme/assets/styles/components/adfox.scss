@@ -1,0 +1,17 @@
+.adfox-banner-background {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+}
+
+.adfox__background {
+	position: absolute;
+	width: max-content;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
